@@ -1,0 +1,39 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import {getCollection} from "astro:content";
+import { Image } from 'astro:assets';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+<Layout title="Blog | HelloYeew">
+	<div class="container mx-auto">
+		<div class="w-full p-4">
+			<h1 class="text-4xl font-bold">Blog</h1>
+			<p>My personal blog unrelated to dev</p>
+		</div>
+		<div class="lg:grid grid-cols-2 grid-flow-row gap-4">
+			{
+				posts.map((post) => (
+					<a href={`/blog/${post.slug}`} class="p-4 max-w-3xl">
+						<div class="w-full flex flex-col gap-3 p-3 rounded-lg hover:bg-base-300 transition-colors duration-300">
+							<div class="w-full max-h-96 overflow-hidden rounded-lg">
+								<Image width={1000} height={300} src={post.data.heroImage} alt={post.data.title} />
+							</div>
+							<div>
+								<date class="text-neutral">{post.data.pubDate.toLocaleDateString('en-us', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric',
+								})}</date>
+								<h4 class="text-primary-content text-xl font-bold">{post.data.title}</h4>
+								<h4 class="text-neutral">{post.data.description}</h4>
+							</div>
+						</div>
+					</a>
+				))
+			}
+		</div>
+	</div>
+</Layout>

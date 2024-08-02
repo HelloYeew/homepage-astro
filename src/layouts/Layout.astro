@@ -1,0 +1,50 @@
+---
+import Header from "../components/Header.astro";
+interface Props {
+	title: string;
+	transparentHeader?: boolean;
+	floatHeader?: boolean;
+	lockScroll?: boolean;
+}
+
+const { title, transparentHeader, lockScroll, floatHeader } = Astro.props;
+
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content="Software Developer Student / Weebs">
+
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content="https://helloyeew.dev">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="HelloYeew">
+		<meta property="og:description" content="Just another guy ⸜( ˙˘˙)⸝">
+		<meta property="og:image" content="/home.jpeg">
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta property="twitter:domain" content="helloyeew.dev">
+		<meta property="twitter:url" content="https://helloyeew.dev">
+		<meta name="twitter:title" content="HelloYeew">
+		<meta name="twitter:description" content="Just another guy ⸜( ˙˘˙)⸝">
+		<meta name="twitter:image" content="/home.jpeg">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<ViewTransitions />
+	</head>
+	<body class:list={['antialiased', `${lockScroll ? 'overflow-hidden' : ''}`]}>
+		<Header transparentHeader={transparentHeader} floating={floatHeader} />
+		<slot />
+	</body>
+</html>

@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+interface project {
+    title: string;
+    description: string;
+    github: string;
+    url?: string;
+}
+
+const projects: project[] = [
+    {
+        title: "Rūrusetto",
+        description: "A wiki for osu! rulesets with fully functional open API.",
+        github: "https://github.com/Rurusetto/rurusetto",
+        url: "https://rulesets.info"
+    },
+    {
+        title: "Beattosetto",
+        description: "An ISP project in year 2 of Software and Knowledge Engineering. Currently maintain as open source projects.",
+        github: "https://github.com/beattosetto/beattosetto",
+        url: "https://beatsets.info"
+    },
+    {
+        title: "Renako",
+        description: "A cross-platform rhythm game that's not just a rhythm game using osu!framework.",
+        github: "https://github.com/HelloYeew/renako",
+    },
+    {
+        title: "Atena",
+        description: "A place for dropping a build artifact from CI pipelines",
+        github: "https://github.com/HelloYeew/atena",
+    },
+    {
+        title: "Asuna",
+        description: "A code coverage report tool for your project",
+        github: "https://github.com/HelloYeew/asuna",
+    },
+    {
+        title: "HelloYeew JetBrain Theme",
+        description: "My applied color scheme for better coding experience in language that I use in JetBrain IDE platform.",
+        github: "https://github.com/HelloYeew/helloyeew-jetbrain-theme",
+        url: "https://plugins.jetbrains.com/plugin/22883-helloyeew-theme"
+    }
+]
+---
+
+<Layout title="Projects | HelloYeew" removeFooter=true>
+    <div class="container mx-auto">
+        <div class="w-full p-4">
+            <h1 class="text-4xl font-bold">Projects</h1>
+            <p>My personal projects during my free time. Some of them are still in progress. All of them are open source on my GitHub.</p>
+        </div>
+        <div class="lg:grid grid-cols-3 grid-flow-row gap-4">
+            {
+                projects.map((project) => (
+                    <div class="card bg-base-100 w-full shadow-xl">
+                        <div class="card-body">
+                            <h2 class="card-title">{project.title}</h2>
+                            <p class="py-3">{project.description}</p>
+                            <div class="card-actions">
+                                <a href={project.github} class="btn btn-primary btn-sm">GitHub</a>
+                                {
+                                    project.url && (
+                                        <a href={project.url} class="btn btn-secondary btn-sm">Website</a>
+                                    )
+                                }
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</Layout>

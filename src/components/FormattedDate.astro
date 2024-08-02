@@ -1,0 +1,14 @@
+---
+interface Props {
+	date: Date;
+}
+
+const { date } = Astro.props;
+---
+<time datetime={date.toISOString()}>
+    <div class="w-12 h-auto bg-base-200 flex flex-col justify-center items-center">
+        <h1 class="text-xl">{date.getDate()}</h1>
+        <h1>{date.toLocaleString('default', { month: 'short' })}</h1>
+        <h1>{date.getFullYear()}</h1>
+    </div>
+</time>
