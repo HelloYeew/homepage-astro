@@ -19,7 +19,7 @@ const posts = (await getCollection('journey')).sort(
 					<a href={`/journey/${post.slug}`} class="p-4 max-w-3xl">
 						<div class="w-full flex flex-col gap-3 p-3 rounded-lg hover:bg-base-300 transition-colors duration-300">
 							<div class="w-full max-h-96 overflow-hidden rounded-lg">
-								<Image width={1000} height={300} src={post.data.heroImage} alt={post.data.title} />
+								<Image width={1000} height={300} src={post.data.heroImage ?? '/fallback.jpeg'} alt={post.data.title} />
 							</div>
 							<div>
 								<date class="text-neutral">{post.data.pubDate}</date>
