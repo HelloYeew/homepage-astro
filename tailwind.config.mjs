@@ -9,6 +9,7 @@ export default {
 		require('@tailwindcss/typography'),
 	],
 	daisyui: {
-		themes: ["cupcake"],
+		// Original : cupcake
+		themes: ["halloween"],
 	}
 }
