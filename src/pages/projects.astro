@@ -40,6 +40,11 @@ const projects: project[] = [
         description: "My applied color scheme for better coding experience in language that I use in JetBrain IDE platform.",
         github: "https://github.com/HelloYeew/helloyeew-jetbrain-theme",
         url: "https://plugins.jetbrains.com/plugin/22883-helloyeew-theme"
+    },
+    {
+        title: "KanaMelody",
+        description: "Cross-platform music player based on MusicBee functionality.",
+        github: "https://github.com/HelloYeew/kana-melody",
     }
 ]
 ---
@@ -53,7 +58,7 @@ const projects: project[] = [
         <div class="lg:grid grid-cols-3 grid-flow-row p-3 gap-3">
             {
                 projects.map((project) => (
-                    <div class="card bg-base-100 w-full shadow-xl">
+                    <div class="card bg-base-300 w-full shadow-xl">
                         <div class="card-body">
                             <h2 class="card-title">{project.title}</h2>
                             <p class="py-3">{project.description}</p>
