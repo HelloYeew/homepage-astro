@@ -16,13 +16,17 @@ const posts = (await getCollection('journey')).sort(
 		<div class="lg:grid grid-cols-2 grid-flow-row gap-4">
 			{
 				posts.map((post) => (
-					<a href={`/journey/${post.slug}`} class="p-4 max-w-3xl">
+					<a href={`/journey/${post.id}`} class="p-4 max-w-3xl">
 						<div class="w-full flex flex-col gap-3 p-3 rounded-lg hover:bg-base-300 transition-colors duration-300">
 							<div class="w-full max-h-96 overflow-hidden rounded-lg">
 								<Image width={1000} height={300} src={post.data.heroImage ?? '/fallback.jpeg'} alt={post.data.title} />
 							</div>
 							<div>
-								<date class="text-secondary-content">{post.data.pubDate}</date>
+								<date class="text-secondary-content">{post.data.pubDate.toLocaleDateString('en-us', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric',
+								})}</date>
 								<h4 class="text-base-content text-xl font-bold">{post.data.title}</h4>
 								<h4 class="text-secondary-content">{post.data.description}</h4>
 							</div>
