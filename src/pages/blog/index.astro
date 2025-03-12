@@ -22,13 +22,13 @@ const posts = (await getCollection('blog')).sort(
 								<Image width={1000} height={300} src={post.data.heroImage ?? '/fallback.jpeg'} alt={post.data.title} />
 							</div>
 							<div>
-								<date class="text-neutral-content">{post.data.pubDate.toLocaleDateString('en-us', {
+								<date class="text-secondary-content">{post.data.pubDate.toLocaleDateString('en-us', {
 									year: 'numeric',
 									month: 'short',
 									day: 'numeric',
 								})}</date>
 								<h4 class="text-base-content text-xl font-bold">{post.data.title}</h4>
-								<h4 class="text-neutral-content">{post.data.description}</h4>
+								<h4 class="text-secondary-content">{post.data.description}</h4>
 							</div>
 						</div>
 					</a>
