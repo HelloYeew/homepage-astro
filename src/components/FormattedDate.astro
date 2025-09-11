@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { date } = Astro.props;
+
+import "../styles/global.css";
 ---
 <time datetime={date.toISOString()}>
     <div class="w-12 h-auto bg-base-200 flex flex-col justify-center items-center">
