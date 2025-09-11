@@ -23,8 +23,8 @@ const { Content } = await render(post);
 			<img class="w-full" src={post.data.heroImage} alt={post.data.title} />
 		</div>
 		<article class="prose lg:prose-xl w-full py-3">
-			<h1 class="py-3">{post.data.title}</h1>
-			<p class="text-neutral">{post.data.pubDate.toLocaleDateString('en-us', {
+			<h1 class="py-1">{post.data.title}</h1>
+			<p class="text-neutral dark:text-neutral-content">{post.data.pubDate.toLocaleDateString('en-us', {
 				year: 'numeric',
 				month: 'short',
 				day: 'numeric',
