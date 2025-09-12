@@ -1,12 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
 import "../styles/global.css";
 ---
 
 <Layout title="HelloYeew" transparentHeader={true} lockScroll={true} floatHeader={true}>
     <div class="w-full h-screen">
-        <Image src="/home.webp" alt="" class="w-auto min-w-full h-auto min-h-full object-cover" width={1920} height={1080} />
+        <picture>
+            <source srcset="/home-hdr.avif" type="image/avif">
+            <source srcset="/home.webp" type="image/webp">
+            <img
+                    src="/home-fallback.jpg"
+                    alt="KAngel Magical Girl from Needy Streamer Overload in Nonthaburi, Thailand"
+                    class="w-auto min-w-full h-auto min-h-full object-cover"
+                    width="1920"
+                    height="1080"
+            />
+        </picture>
         <div class="absolute bottom-0 right-0 m-4 p-4 bg-black/60 text-white rounded-xl">
             <p class="font-bold">KAngel Magical Girl</p>
             <p>Needy Streamer Overload</p>
