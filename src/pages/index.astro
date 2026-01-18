@@ -1,27 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import "../styles/global.css";
 ---
 
 <Layout title="HelloYeew" transparentHeader={true} lockScroll={true} floatHeader={true}>
     <div class="w-full h-screen">
-        <picture>
-            <source srcset="/home-hdr.avif" type="image/avif">
-            <source srcset="/home.webp" type="image/webp">
-            <img
-                    src="/home-fallback.jpg"
-                    alt="KAngel Magical Girl from Needy Streamer Overload in Nonthaburi, Thailand"
-                    class="w-auto min-w-full h-auto min-h-full object-cover"
-                    width="1920"
-                    height="1080"
-            />
-        </picture>
+        <Image src="/home.webp" alt="" class="w-auto min-w-full h-auto min-h-full object-cover" width={1920} height={1080} />
         <div class="absolute bottom-0 right-0 m-4 p-4 bg-black/60 text-white rounded-xl">
-            <p class="font-bold">KAngel Magical Girl</p>
-            <p>NEEDY STREAMER OVERLOAD</p>
-            <p class="text-gray-300">Nonthaburi, Thailand</p>
-            <p class="text-gray-300">7 September 2025 06:12:47 PM</p>
-            <p class="text-gray-300">📸 <a href="https://www.facebook.com/profile.php?id=100089368915714" class="underline">Hayato_P</a></p>
+            <p class="font-bold">🪄 Monica Everett</p>
+            <p>Silent Witch</p>
+            <p class="text-gray-300">Ayutthaya, Thailand</p>
+            <p class="text-gray-300">25 December 2025 04:22:54 PM</p>
+            <p class="text-gray-300">📸 <a href="https://www.facebook.com/CameMarkPhotographer" class="underline">CameMark & CameSara</a></p>
         </div>
     </div>
 </Layout>

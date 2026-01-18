@@ -1,5 +1,5 @@
 @import "tailwindcss";
 @plugin "daisyui"{
-    themes: valentine --default, dracula --prefersdark;
+    themes: autumn --default, business --prefersdark;
 }
 @plugin '@tailwindcss/typography';
