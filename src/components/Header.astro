@@ -7,10 +7,11 @@ import "../styles/global.css";
 
 const { transparentHeader, floating } = Astro.props;
 ---
-<div class:list={['navbar', 'top-0', 'z-[1]', 'text-base-100 dark:text-neutral-content',
+<div class:list={['navbar', 'top-0', 'z-[1]',
     `${transparentHeader ? 'bg-transparent' : 'bg-base-100'}`,
     `${floating ? 'absolute' : 'sticky'}`,
-    `${transparentHeader ? 'hover:bg-base-100 transition-colors duration-300 hover:text-primary' : ''}`
+    `${transparentHeader ? 'hover:bg-base-100 transition-colors duration-300' : ''}`,
+    `${transparentHeader ? 'text-accent-content dark:text-primary-content hover:text-primary' : 'text-accent-content dark:text-primary'}`
 ]}>
     <div class="navbar-start">
         <div class="dropdown">
